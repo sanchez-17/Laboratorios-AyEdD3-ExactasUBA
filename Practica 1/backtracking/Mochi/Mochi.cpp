@@ -13,9 +13,9 @@ int INF = 1e9;
 int N,P;
 vector<ii> p;
 
-int Mochi(int i,int P,int B){
+int Mochi(int i,int P){
     if(i==N) return (P<0?-INF:0);
-    else return max( Mochi(i+1,P - p[i].fst,B + p[i].snd) , Mochi(i+1,P,B));
+    else return max( Mochi(i+1,P - p[i].fst) + p[i].snd , Mochi(i+1,P) );
 }
 
 int main(){
@@ -23,5 +23,5 @@ int main(){
     p.resize(N,mp(-1,-1));
     forn(i,N) cin >> p[i].fst >> p[i].snd;
 
-    cout << Mochi(0,P,0);
+    cout << Mochi(0,P);
 }
