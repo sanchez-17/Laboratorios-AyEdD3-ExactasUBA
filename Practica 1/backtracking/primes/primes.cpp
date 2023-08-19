@@ -8,10 +8,11 @@ int N; vector<int> number;
 vector<bool> CRIBA;
 
 void cargar_criba() {
+	//const int t = 2*N;//1e7
     CRIBA.resize(1e7, true);
     CRIBA[0] = CRIBA[1] = false;
 
-    for (long i=2; i<=CRIBA.size(); i++)
+    for (int i=2; i<=CRIBA.size(); i++)
         if (CRIBA[i] && i*i<=CRIBA.size())
             for (int j=i*i; j<=CRIBA.size(); j+=i)
                 CRIBA[j] = false;
@@ -56,3 +57,5 @@ int main() {
 
     return 0;
 }
+
+//for x in "%e"*.in ; do echo $x;time "./%e"<"$x";echo "=================================";done 
