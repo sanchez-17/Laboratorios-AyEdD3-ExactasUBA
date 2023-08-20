@@ -6,6 +6,7 @@ using namespace std;
 #define rz resize
 #define sz size
 #define pb push_back
+#define ppb pop_back
 
 //Punto f)
 //Segun la guia los indices empiezan en 1. Tuve que modificar el codigo teniendo
@@ -39,7 +40,7 @@ bool subset_sum_h(int C[],int i, int S,vector<int>& p){
 		 bool a = subset_sum_h(C,i-1,S,p);
 		 p.pb(C[i]);
 		 bool b= subset_sum_h(C,i-1,S-C[i],p);
-		 p.clear();
+		 p.ppb();
 		 return a || b; 
 	}
 }
