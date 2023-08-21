@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "../utilities.h"
 using namespace std;
 #define forr(i,a,b) for(int i=(int)a;i<(int)b;i++)
 #define forn(i,n) forr(i,0,n)
@@ -31,8 +32,7 @@ bool subset_sum_h(int C[],int i, int S,vector<int>& p){
 	if(S<0) return false;
 	if(i==-1){
 		if(S==0){
-			forn(j,p.sz()) cout<<p[j]<<",";
-			cout << "\n";
+			impVector(p);
 			return true;
 		}else return false;
 	}
@@ -50,4 +50,5 @@ int main(){
 	int C[N];vector<int> p;
 	forn(i,N) cin >> C[i]; 
 	cout <<subset_sum_h(C,N-1,S,p) << "\n";
+	return 0;
 }
