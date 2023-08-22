@@ -50,7 +50,6 @@ void minSumaPoda(vector<bool>& usado,vector<int>& I,int S){
 		}
 }
 
-
 void solve(){
 	vector<bool> usado(N,false);
 	//Inicializo I como pi(i)=i. Para poder comenzar a comparar las sumas

@@ -21,7 +21,7 @@ void impMatriz(vector<vector<T>>& M){
 template<class T>
 void impVector(vector<T>& V){
 	int n = V.size();
-	//cout << "\n";
+	cout << "\n"<<"V:";
 	forn(i,n) cout<<V[i]<<" ";
 	cout << "\n";
 }
