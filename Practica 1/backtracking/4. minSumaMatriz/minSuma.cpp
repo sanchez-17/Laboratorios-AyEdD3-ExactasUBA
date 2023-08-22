@@ -39,15 +39,12 @@ void minSuma(vector<bool>& usado,vector<int>& I){
 //de explorar.
 void minSumaPoda(vector<bool>& usado,vector<int>& I,int S){
 	if(sz(I)==N){//Si ya tengo una permutacion de {1...N}
-		if(S<SUMA){
-			SUMA = S;	
-			RES = I;
-		}
+		S += M[I[N-1]][I[0]];
+		if(S<SUMA){SUMA = S;RES = I;}
 	}else{
 		forn(i,N) if (!usado[i]){
 				usado[i] = true; I.pb(i);
-				if (S < SUMA) 
-					minSumaPoda(usado,I,S+M[I[sz(I)-2]][i]);
+				if(S<SUMA) minSumaPoda(usado,I,S+M[I[sz(I)-2]][i]);
 				usado[i] = false; I.ppb();
 			}
 		}
@@ -59,7 +56,13 @@ void solve(){
 	//Inicializo I como pi(i)=i. Para poder comenzar a comparar las sumas
 	vector<int> I;
 	//minSuma(usado,I);
-	minSumaPoda(usado,I,0);
+	//Con poda
+	forn(i,N){
+		usado[i] = true; I.pb(i);
+		minSumaPoda(usado,I,0);
+		usado[i] = false; I.ppb();
+	}
+	
 	cout << SUMA << "\n";
 	impVector(RES);
 
