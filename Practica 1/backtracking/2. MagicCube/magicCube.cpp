@@ -1,18 +1,29 @@
 #include <iostream>
 #include <vector>
+#include "../utilities.h"
 using namespace std;
-#define forr(i,a,b) for(int i=(int)a;i<(int)b;i++)
-#define forn(i,n) forr(i,0,n)
-#define rz resize
-#define sz size
-#define pb push_back
-#define ppb pop_back
+
+#define cubo vector<vector<int>>
 //Punto a) Se generan (n^2)^(n^2) cubos
-int force_brute(n){
-	
+int N,RES=0;cubo C;
+
+void force_brute(cubo& C,int i,int j){
+	if(i==N){ impMatriz(C);cout<<RES;if(esMagico(C)) RES++;return;}
+	else{
+		int sig_j = j==N ? 0 : j+1;
+		int sig_i = sig_j==0 ? i+1 : i;
+		forr(k,1,N*N+1){ 
+			C[i][j]=k;
+			force_brute(C,sig_i,sig_j);
+		}
+	}
 }
+
+
 int main(){
-	int n; cin >> n; vector<bool> usados(n*n+1,false);
-	cout<< force_brute(n)<<"\n";
+	cin >> N; //vector<bool> usados(n*n+1,false);
+	C.rz(N,vector<int>(N,0));
+	force_brute(C,0,0);
+	cout<< RES <<"\n";
 	return 0;
 }
