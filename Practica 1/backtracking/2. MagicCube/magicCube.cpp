@@ -8,14 +8,15 @@ using namespace std;
 int N,RES=0;cubo C;
 
 void force_brute(cubo& C,int i,int j){
-	if(i==N){ impMatriz(C);cout<<RES;if(esMagico(C)) RES++;return;}
+	if(i==N){ impMatriz(C);cout<<"=============="<<RES;if(esMagico(C)) RES++;return;}
 	else{
-		int sig_j = j==N ? 0 : j+1;
+		int sig_j = j==N-1 ? 0 : j+1;
 		int sig_i = sig_j==0 ? i+1 : i;
 		forr(k,1,N*N+1){ 
 			C[i][j]=k;
 			force_brute(C,sig_i,sig_j);
 		}
+		return;
 	}
 }
 
