@@ -5,6 +5,7 @@ using namespace std;
 vector<int> P;
 int N;
 int INF = 1e7;
+vector<vector<int>> memory;
 
 int AV(int j,int c){
     if (c < 0 || c > j){
@@ -14,10 +15,26 @@ int AV(int j,int c){
         return 0;
     }
     else if (c > 0){
-        return max(AV(j+1,c-1)+P[j], max(AV(j+1,c+1)-P[j], AV(j+1,c)));
+        if (memory[j][c] != INF){
+            return memory[j][c];
+        }
+        else{
+            int res = max(AV(j+1,c-1)+P[j], max(AV(j+1,c+1)-P[j], AV(j+1,c)));
+            memory[j][c] = res;
+            return res;
+        }
+
     }
     else {
-        return max(AV(j+1,c+1)-P[j], AV(j+1,c));
+        if (memory[j][c] != INF){
+            return memory[j][c];
+        }
+        else {
+            int res = max(AV(j+1,c+1)-P[j], AV(j+1,c));
+            memory[j][c] = res;
+            return res;
+        }
+
     }
 
 }
@@ -25,6 +42,7 @@ int AV(int j,int c){
 
 int main() {
     cin >> N;
+    memory.resize(N, vector<int>(N, INF));
     P.resize(N);
     for (int i = 0; i < N; i++){
         cin >> P[i];
