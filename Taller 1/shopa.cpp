@@ -6,7 +6,7 @@ int f(vector<bool>& usado, int elem, int cnt, int min){
 			min =  elem < min  ? elem : min;
 			return min + f( usado, elem, 0, min);
 	}
-	else{	
+	else{
 		int maxDesc  = 0;
 		forn(i,n) if(!usado[i]){
 			usado[i] = true;
