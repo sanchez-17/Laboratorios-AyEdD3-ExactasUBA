@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
+#include <algorithm>
 using namespace std;
 #define fastio ios_base::sync_with_stdio(0); cin.tie(0); cin.exceptions(cin.failbit);
 #define forr(i,a,b) for(int i = (int) a; i < (int) b; i++)
