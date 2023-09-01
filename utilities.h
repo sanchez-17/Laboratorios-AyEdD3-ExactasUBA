@@ -16,6 +16,9 @@ using namespace std;
 #define pb push_back
 #define ppb pop_back
 #define DBG(x) cerr << #x << " = " << (x) << endl;
+#define DBG2(x,y)   cerr << #x << " = " << (x) << " , " << #y << " = " << (y) << endl;
+#define DBG3(x,y,z)   cerr << #x << " = " << (x) << " , " << #y << " = " << (y) << " , " << #z << " = " << (z)<< " , " << endl;
+#define DBG4(x,y,z,w) cerr << #x << " = " << (x) << " , " << #y << " = " << (y) << " , " << #z << " = " << (z)<< " , " << #w << " = " << (w) << endl;
 #define DBGY(x) cerr << #x << " = " << (x) << " , ";
 #define RAYA cerr<<"========================="<<endl;
 
