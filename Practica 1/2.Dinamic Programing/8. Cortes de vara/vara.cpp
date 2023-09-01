@@ -1,4 +1,4 @@
-#include "../../backtracking/utilities.h"
+#include "../../../utilities.h"
 int N,L,INF = 1e7;
 vector<int> C;vector<bool> usado;
 
@@ -11,10 +11,10 @@ int s(int i,int j, int cnt ){
 			usado[k]=true;
 			int coste_k = s(i,C[k],cnt+1) + s(C[k],j,cnt+1);
 			min_coste = coste_k < min_coste ? coste_k : min_coste;
-			cout<<" i: "<<i<<" j: "<<j<<" c: "<<C[k]<<" coste_k: "<< coste_k<<endl;
+			DBGY(i);DBGY(j);DBGY(C[k]);DBG(coste_k);
 			usado[k]=false;
 		}
-		cout<<"cnt: "<<cnt<<" minCosto:" <<min_coste<<endl;
+		DBGY(cnt);DBG(min_coste);RAYA;
 		return (j-i) + min_coste;
 	}
 		
@@ -23,7 +23,7 @@ int s(int i,int j, int cnt ){
 int main(){
 	cin >> N >> L; C.rz(N);usado.rz(N,false);vector<int> I;
 	forn(i,N) cin >> C[i];
-	cout << s(0,L,0) << endl;
+	cout << s(0,L,1) << endl;
 	return 0;
 	
 }

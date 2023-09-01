@@ -5,12 +5,19 @@
 #include <vector>
 #include <math.h>
 using namespace std;
-#define forr(i,a,b) for(int i=(int)a;i<(int)b;i++)
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cin.exceptions(cin.failbit);
+#define forr(i,a,b) for(int i = (int) a; i < (int) b; i++)
 #define forn(i,n) forr(i,0,n)
+#define dforr(i,a,b) for(int i = (int) b-1; i >= (int) a; i--)
+#define dforn(i,n) dforr(i,0,n)
 #define rz resize
-#define sz(V) V.size()
+#define all(x) (x).begin(), (x).end()
+#define sz(x) (int)(x).size()
 #define pb push_back
 #define ppb pop_back
+#define DBG(x) cerr << #x << " = " << (x) << endl;
+#define DBGY(x) cerr << #x << " = " << (x) << " , ";
+#define RAYA cerr<<"========================="<<endl;
 
 template<class T>
 void impMatriz(vector<vector<T>>& M){
@@ -28,6 +35,16 @@ void impVector(vector<T>& V){
 	cout << "\n"<<"V:";
 	forn(i,n) cout<<V[i]<<" ";
 	cout << "\n";
+}
+
+template<class T>
+ostream & operator <<(ostream &os, const vector<T>&v){
+	os << "[";
+	forn(i,sz(v)){
+		if (i>0) os	<< ",";
+		os << v[i];
+	}
+	return os << "]";
 }
 
 bool porFila(vector<vector<int>>& C,int sum){
