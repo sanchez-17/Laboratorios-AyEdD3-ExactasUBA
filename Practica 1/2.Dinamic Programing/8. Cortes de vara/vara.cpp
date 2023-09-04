@@ -3,7 +3,7 @@ int N,L,INF = 1e7;
 vector<int> C;vector<bool> usado;
 
 bool noHayMasCortes(int i, int j){
-    forr(k, i+1, j) if(!usado[k]) return false;
+    forn(k, N) if(!usado[k] && i<C[k] && C[k]<j) return false;
     return true;
 }   
 
