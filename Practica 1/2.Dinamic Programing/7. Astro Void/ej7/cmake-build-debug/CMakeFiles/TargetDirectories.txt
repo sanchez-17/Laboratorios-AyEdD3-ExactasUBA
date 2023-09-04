@@ -1,3 +1,0 @@
-/home/barbara/Escritorio/Algo 3 ejercicios/Laboratorios-AyEdD3-ExactasUBA-/Practica 1/Dinamic Programing/7. Astro Void/ej7/cmake-build-debug/CMakeFiles/ej7.dir
-/home/barbara/Escritorio/Algo 3 ejercicios/Laboratorios-AyEdD3-ExactasUBA-/Practica 1/Dinamic Programing/7. Astro Void/ej7/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/barbara/Escritorio/Algo 3 ejercicios/Laboratorios-AyEdD3-ExactasUBA-/Practica 1/Dinamic Programing/7. Astro Void/ej7/cmake-build-debug/CMakeFiles/rebuild_cache.dir

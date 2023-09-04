@@ -1,0 +1,4 @@
+f(i,j)=
+	-A(i,j)  si (i,j)=(m,n)
+	INF si (i>m v j>n)
+	max( 1, min(f(i+1,j), f(i,j+1)) - A(i,j) ) cc
