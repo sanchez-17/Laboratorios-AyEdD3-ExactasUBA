@@ -1,0 +1,13 @@
+a)
+ La idea de Backtracking: 
+realizar las distintas premutaciones de las cajas extendiendo la sol. de 
+esta manera:
+- Al considerar cajas con orden creciente
+- Considerar un soporte maximo que se actualiza
+Al tomar la caja i con soporte w_i, al considerar la caja i+1 con 
+soporte w_i+1. El soporte maximo a considerar es w_i sii w_i <= w_i+1 cc w_i+1
+- Si no hay cajas disponibles con el soporte maximo actual devolver
+|C| tal que C es la sol. candidata.
+- Se tiene una variable global res que guarda el maximo cardinal de C.
+
+b)

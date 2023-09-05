@@ -11,11 +11,18 @@ using namespace std;
 #define forn(i,n) forr(i,0,n)
 #define dforr(i,a,b) for(int i = (int) b-1; i >= (int) a; i--)
 #define dforn(i,n) dforr(i,0,n)
+//renombres facheros
 #define rz resize
 #define all(x) (x).begin(), (x).end()
 #define sz(x) (int)(x).size()
 #define pb push_back
 #define ppb pop_back
+#define fst first
+#define snd second
+#define pii pair<int,int>
+#define vi vector<int>
+#define matriz vector<vector<int>>
+//Para debugear
 #define DBG(x) cerr << #x << " = " << (x) << endl;
 #define DBG2(x,y)   cerr << #x << " = " << (x) << " , " << #y << " = " << (y) << endl;
 #define DBG3(x,y,z)   cerr << #x << " = " << (x) << " , " << #y << " = " << (y) << " , " << #z << " = " << (z)<< " , " << endl;
